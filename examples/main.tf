@@ -17,7 +17,7 @@ module "aws_config" {
 
   config_bucket_name = "my-aws-config-bucket-${random_id.bucket_suffix.hex}"
   sns_topic_name     = "aws-config-notifications"
-  required_tags      = ["Name", "Environment", "Owner", "Project"]
+  required_tags      = ["Name", "Environment", "Owner", "RequestedBy"]
 }
 
 resource "random_id" "bucket_suffix" {
