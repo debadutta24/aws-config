@@ -48,13 +48,3 @@ resource "aws_instance" "example" {
   }
 }
 
-# Example of non-compliant resource (missing required tags)
-resource "aws_s3_bucket" "non_compliant" {
-  bucket = "non-compliant-bucket-${random_id.bucket_suffix.hex}"
-
-  tags = {
-    Name        = "invalid-name-format"
-    Environment = "dev"
-    # Missing Owner and Project tags, and Name doesn't follow appname-Environment-Region format
-  }
-}
